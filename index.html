@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!--
+    c't Google OAuth Demo.
+    Copyright (c) 2014 Oliver Lau <ola@ct.de>, Heise Zeitschriften Verlag
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title>c't Google OAuth Demo</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="application-name" content="c't OAuth Demo" />
+  <meta name="author" content="Oliver Lau" />
+  <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="js/ct-oauth-demo.js"></script>
+  <link rel="stylesheet" href="css/ct-oauth-demo.css" />
+  <link href="img/favicon_ct.ico" rel="shortcut icon" />
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57x57-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png" />
+  <script type="text/javascript">
+    $(document).ready(CTOAUTHDEMO.init);
+  </script>
+</head>
+<body>
+  <div id="loader-icon"><div class="blockG" id="rotateG_01"></div><div class="blockG" id="rotateG_02"></div><div class="blockG" id="rotateG_03"></div><div class="blockG" id="rotateG_04"></div><div class="blockG" id="rotateG_05"></div><div class="blockG" id="rotateG_06"></div><div class="blockG" id="rotateG_07"></div><div class="blockG" id="rotateG_08"></div></div>
+  <div id="app-container">
+    <header>c't Google OAuth Demo</header>
+    <section id="main">
+      <div id="logon" class="box">
+        <!-- Login with Google -->
+        <div id="googleSigninButton">
+          <span class="g-signin"
+            data-scope="profile"
+            data-clientid=""
+            data-redirecturi="postmessage"
+            data-accesstype="offline"
+            data-cookiepolicy="single_host_origin"
+            data-callback="googleSigninCallback"
+            data-theme="dark"
+            data-height="tall"
+            data-width="wide"></span>
+        </div>
+      </div>
+      <div id="app" class="box hide">
+        <p><strong>Herzlich Willkommen, <span id="displayname"></span>!</strong></p>
+        <p>Du hast dich erfolgreich angemeldet.</p>
+        <img id="avatar" src="img/default-avatar.jpg" />
+        <div id="oauth">
+          <label for="access_token">Dein OAuth-Zugriffs-Token</label>
+          <div id="access_token" class="oauth-value"></div>
+          <label for="id_token">Dein OAuth-ID-Token</label>
+          <div id="id_token" class="oauth-value"></div>
+          <label for="id_token_decoded">Dein OAuth-ID-Token (dekodiert)</label>
+          <div id="id_token_decoded" class="oauth-value"></div>
+          <label for="issued_at">Ausgegeben</label>
+          <div id="issued_at" class="oauth-value"></div>
+          <label for="expires_at">Läuft ab</label>
+          <div id="expires_at" class="oauth-value"></div>
+          <label for="expires_in">Läuft ab in [h:m:s]</label>
+          <div id="expires_in" class="oauth-value"></div>
+          <button id="check-access-token">Zugriffs-Token prüfen</button>
+          <button id="check-id-token">ID-Token prüfen</button>
+          <button id="refresh-token">Token erneuern</button>
+          <button id="revoke-token">Abmelden</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
