@@ -29,7 +29,7 @@ if (ct_OAuthDemo::$dbh) {
 
     ct_OAuthDemo::$dbh->exec('CREATE UNIQUE INDEX IF NOT EXISTS `userid_uniq` ON `users` (`userid`)');
     ct_OAuthDemo::$dbh->exec('CREATE INDEX IF NOT EXISTS `name` ON `users` (`name`)');
-    echo "Table 'buddies' created.<br/>\n";
+    echo "Table 'users' created.<br/>\n";
 }
 
 ?>
