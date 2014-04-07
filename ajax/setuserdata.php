@@ -84,7 +84,7 @@ if (ct_OAuthDemo::$dbh) {
     ct_OAuthDemo::$res['processing_info'] = array();
     if (!$row) {
         ct_OAuthDemo::$dbh->exec("INSERT INTO `users` (`userid`) VALUES ('$user_id')");
-        ct_OAuthDemo::$res['id'] = $dbh->lastInsertId();
+        ct_OAuthDemo::$res['id'] = ct_OAuthDemo::$dbh->lastInsertId();
         $sth->execute(array($user_id));
         $row = $sth->fetch();
         $sth->closeCursor();
