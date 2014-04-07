@@ -89,7 +89,7 @@ class ct_OAuthDemo {
     }
     
     
-    function verifyIdToken($id_token) {
+    public static function verifyIdToken($id_token) {
         $id_token = filter_var($id_token, FILTER_SANITIZE_STRING);
         $client = new Google_Client();
         $client->setClientId(self::$GOOGLE_OAUTH_CLIENT_ID);
